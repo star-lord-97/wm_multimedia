@@ -1,43 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <head>
+        <meta charset="utf-8" />
+        <title>Safebox</title>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+        <!-- Bootstrap file -->
+        <link rel="stylesheet" href="./css/bootstrap.css" />
+        <link rel="stylesheet" href="./vendor/css/bootstrap_rtl.min.css" />
+        <link rel="stylesheet" href="./vendor/css/bootstrap-theme_rtl.min.css" />
+        <!-- Font-Awesome -->
+        <link href="./css/releases/v5.1.1/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./css/releases/v5.1.1/css/all.css" />
+        <link rel="stylesheet" href="./css/releases/v5.1.1/css/v4-shims.css" />
+        <!-- favicon Files -->
+        <link rel="icon" href="./vendor/images/favicon.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="./vendor/images/favicon.png" type="image/x-icon" />
+        <!-- Style Files -->
+        <link rel="stylesheet" type="text/css" href="./css/style.css" />
+        <link rel="stylesheet" href="./vendor/css/animate.css" />
+        <link rel="stylesheet" type="text/css" href="./vendor/mngez.css" />
+        <link rel="stylesheet" type="text/css" href="./vendor/mngez_ltr.css" />
+        <link rel="stylesheet" type="text/css" href="./vendor/css/responsive_ltr.css" />
+        <link rel="stylesheet" type="text/css" href="./vendor/fonts/fonts.css" />
+        <!-- Script Files -->
+        <script
+            language="JavaScript"
+            type="text/javascript"
+            charset="UTF-8"
+            src="js/jquery-1.9.1.min.js"
+        ></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./js/jquery.paging.js"></script>
+        <script type="text/javascript" src="./js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="./js/paging.js"></script>
+        <script type="text/javascript" src="./vendor/js/jquery.easing.min.js"></script>
+        <script type="text/javascript" src="./vendor/js/jquery.easy-ticker.min.js"></script>
+        <script type="text/javascript" src="./vendor/js/wow.min.js"></script>
+        <!-- Upload Files -->
+        <link
+            href="https://code.jquery.com/ui/1.11.2/themes/cupertino/jquery-ui.css"
+            type="text/css"
+            rel="stylesheet"
+        />
+        <script src="./js/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/upload.css" />
+        <script src="./vendor/js/upload.js"></script>
+        <script src="./vendor/js/dragndrop.js"></script>
+        <script src="./vendor/js/multiselector.js"></script>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+        <!-- this is javascript for section ubload to toggle view
+		<script type="text/javascript">  
+			(function($) {
+					$(function() {
+				$('ul.tabs').on('click', 'li:not(.current)', function() {
+					var section = $(this).parents('div.section:first');
+					var idx = $(this).index();
+					$(this).addClass('current').siblings().removeClass('current');
+					$(section).find('> div.box').eq(idx).fadeIn(150).siblings('div.box').hide();
+					$.cookie($(section).attr('id') + 'tab', idx);
+				});
+				$('.section').each(function(i, e) {
+					if(!e.id) return;
+					var idx;
+					if(idx = $.cookie(e.id + 'tab')) {
+						$(e).find('> ul > li').eq(idx).click();
+					}
+				});
+				})
+			})(jQuery)
+		</script>  -->
+        <style>
+            input[type="submit"] {
+                height: 35px;
+                padding: 0 30px;
+                line-height: 35px;
+                margin: 0 auto;
+                background-color: #01a9b3;
+                border: none;
+                font-size: 14px;
+                font-family: "Cairo_bold", "play", Arial, Helvetica, sans-serif;
+                color: #ffffff;
+            }
+            .lol {
+                background-color: #ffffff;
+                color: #01a9b3;
+                font-family: "Cairo_Bold", "play", Arial, Helvetica, sans-serif;
+                font-size: 21px;
+                padding: 0px;
+            }
+            table {
+                font-size: 15px;
+                margin: 0px;
+                border-collapse: collapse;
+            }
+            table tr,
+            table th:first-child {
+                text-align: center;
+            }
+            .uploadformpage {
+                overflow: auto;
+            }
+            .error {
+                color: red;
+            }
+        </style>
+    </head>
+    <body class="lastnewshere">
+        <div class="loaderpage">
+            <div class="cssload-container">
+                <div class="cssload-loading"><i></i><i></i><i></i><i></i></div>
+            </div>
+        </div>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"></div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+        <!-- this is javascript for Animate all page -->
+
+        <script type="text/javascript">
+            new WOW().init();
+            $(document).ready(function () {
+                var dd = $(".vticker")
+                    .easyTicker({
+                        direction: "up",
+                        easing: "easeInOutBack",
+                        speed: "slow",
+                        interval: 5000,
+                        height: "auto",
+                        visible: 1,
+                        mousePause: 0,
+                    })
+                    .data("easyTicker");
+                $("button.closebtn").click(function () {
+                    $("#lastnews").hide();
+                });
+                $("button.closebtn").click(function () {
+                    $("body").toggleClass("lastnewshere");
+                });
+            });
+
+            // Mobile Menu
+            $(document).ready(function () {
+                $("#intro button.buttonmenu").on("click", function () {
+                    $("#sidebarphone").toggleClass("menuisopen");
+                });
+
+                $("#sidebarphone button.closemenu").on("click", function () {
+                    $("#sidebarphone").toggleClass("menuisopen");
+                });
+            });
+
+            $(window).load(function () {
+                // Animate loader off screen
+                $(".loaderpage").fadeOut("slow");
+            });
+        </script>
+    </body>
 </html>

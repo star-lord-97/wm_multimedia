@@ -1,0 +1,101 @@
+﻿/* Portrait phones and smaller */
+@media (min-width: 320px) and (max-width: 480px) {
+#headerone .socialmedia a {height: 25px;width: 25px;line-height: 25px;font-size: 15px;}
+#headerone .mailadd {line-height: 35px;}
+#ouradvantages ul li {width: 100%;margin: 10px auto;}
+#howmoney .img {background-position: center top;}
+#lastnews .vticker {font-size: 13px;}
+#lastnews button.closebtn {left: 10px;}
+.uploadformpage ul.tabs li {width: 100%;margin: 0 auto;border-left: none;}
+.uploadformpage #url_upload.box .reurlupload span {font-size: 12px;}
+.uploadformpage #file_upload.box .content {padding: 0;display: block;}
+.uploadformpage #file_upload.box .content .icon {width: 100%;margin: 0 auto;padding: 5px;}
+.uploadformpage #file_upload.box .content .name {margin: 0 auto;padding: 5px;}
+.uploadformpage #file_upload.box .content .name h4 {width: auto;word-wrap: anywhere;max-width: 100%;}
+.uploadformpage #file_upload #upload_controls label.btn-add {padding: 0 30px;}
+.uploadformpage #url_upload.box .reurlupload span {font-size: 12px;}
+.uploadformpage #file_upload button, .uploadformpage #url_upload button, .uploadformpage .section .box .copyfiles button {padding: 0 20px;}
+.download0page .blockinfo .iconf {float: none;width: auto;padding: 10px 0;}
+.download0page .blockinfo .descone {float: none;width: auto;padding: 10px;}
+.download0page .blockinfo .desctwo {float: none;width: auto;border-radius: 0 0 8px 8px;}
+.download1page .blockdown .title {font-size: 15px;line-height: 23px;margin: 0 auto 10px;}
+.download1page .blockdown .infofile ul li {float: none;width: 100%;height: auto;line-height: normal;border-radius: 0;text-align: center;}
+.download1page .blockdown .infofile ul li span {float: none;border-radius: 0;width: auto;margin: 0 auto;padding: 5px;}
+.download1page .blockdown2 #direct_link a {width: 100%;}
+.download1page .blockdown2 .symlinkexpire {line-height: 25px;}
+footer .footermenu ul li {width: 50%;}
+footer .mailinfo {text-align: center;}
+footer .copyrights, footer .mngez {text-align: center;float: none;}
+}
+
+/* Smart phones and Tablets */
+@media (min-width: 481px) and (max-width: 767px) {
+#headerone .socialmedia a {height: 25px;width: 25px;line-height: 25px;font-size: 15px;}
+#headerone .mailadd {line-height: 35px;}
+#ouradvantages ul li {width: 100%;margin: 10px auto;}
+#howmoney .img {background-position: center top;}
+#lastnews .vticker {font-size: 13px;}
+#lastnews button.closebtn {left: 10px;}
+.uploadformpage ul.tabs li {width: 100%;margin: 0 auto;border-left: none;}
+.uploadformpage #url_upload.box .reurlupload span {font-size: 12px;}
+.uploadformpage #file_upload.box .content {padding: 0;display: block;}
+.uploadformpage #file_upload.box .content .icon {width: 100%;margin: 0 auto;padding: 5px;}
+.uploadformpage #file_upload.box .content .name {margin: 0 auto;padding: 5px;}
+.uploadformpage #file_upload.box .content .name h4 {width: auto;word-wrap: anywhere;max-width: 100%;}
+.uploadformpage #file_upload #upload_controls label.btn-add {padding: 0 30px;}
+.uploadformpage #url_upload.box .reurlupload span {font-size: 12px;}
+.uploadformpage #file_upload button, .uploadformpage #url_upload button, .uploadformpage .section .box .copyfiles button {padding: 0 20px;}
+.download0page .blockinfo .iconf {float: none;width: auto;padding: 10px 0;}
+.download0page .blockinfo .descone {float: none;width: auto;padding: 10px;}
+.download0page .blockinfo .desctwo {float: none;width: auto;border-radius: 0 0 8px 8px;}
+.download1page .blockdown .title {font-size: 15px;line-height: 23px;margin: 0 auto 10px;}
+.download1page .blockdown .infofile ul li {float: none;width: 100%;height: auto;line-height: normal;border-radius: 0;text-align: center;}
+.download1page .blockdown .infofile ul li span {float: none;border-radius: 0;width: auto;margin: 0 auto;padding: 5px;}
+.download1page .blockdown2 #direct_link a {width: 100%;}
+.download1page .blockdown2 .symlinkexpire {line-height: 25px;}
+footer .footermenu ul li {width: 50%;}
+footer .mailinfo {text-align: center;}
+footer .copyrights, footer .mngez {text-align: center;float: none;}
+}
+
+/* Small Screens */
+@media (min-width: 768px) and (max-width: 991px) {
+#headerone .socialmedia a {height: 25px;width: 25px;line-height: 25px;font-size: 15px;}
+#headerone .mailadd {line-height: 35px;}
+#ouradvantages ul li {width: 100%;margin: 10px auto;}
+#howmoney .img {background-position: center top;}
+#lastnews .vticker {font-size: 13px;}
+#lastnews button.closebtn {left: 10px;}
+.uploadformpage ul.tabs li {width: 100%;margin: 0 auto;border-left: none;}
+.uploadformpage #url_upload.box .reurlupload span {font-size: 12px;}
+.uploadformpage #file_upload.box .content {padding: 0;display: block;}
+.uploadformpage #file_upload.box .content .icon {width: 100%;margin: 0 auto;padding: 5px;}
+.uploadformpage #file_upload.box .content .name {margin: 0 auto;padding: 5px;}
+.uploadformpage #file_upload.box .content .name h4 {width: auto;word-wrap: anywhere;max-width: 100%;}
+.uploadformpage #file_upload #upload_controls label.btn-add {padding: 0 30px;}
+.uploadformpage #url_upload.box .reurlupload span {font-size: 12px;}
+.uploadformpage #file_upload button, .uploadformpage #url_upload button, .uploadformpage .section .box .copyfiles button {padding: 0 20px;}
+.download0page .blockinfo .iconf {float: none;width: auto;padding: 10px 0;}
+.download0page .blockinfo .descone {float: none;width: auto;padding: 10px;}
+.download0page .blockinfo .desctwo {float: none;width: auto;border-radius: 0 0 8px 8px;}
+.download1page .blockdown .title {font-size: 15px;line-height: 23px;margin: 0 auto 10px;}
+.download1page .blockdown .infofile ul li {float: none;width: 100%;height: auto;line-height: normal;border-radius: 0;text-align: center;}
+.download1page .blockdown .infofile ul li span {float: none;border-radius: 0;width: auto;margin: 0 auto;padding: 5px;}
+.download1page .blockdown2 #direct_link a {width: 100%;}
+.download1page .blockdown2 .symlinkexpire {line-height: 25px;}
+footer .footermenu ul li {width: 50%;}
+footer .mailinfo {text-align: center;}
+footer .copyrights, footer .mngez {text-align: center;float: none;}
+}
+
+/* Medium Screens */
+@media (max-width: 1000px) {
+}
+
+/* Large Screens */
+@media (max-width: 1328px) {
+}
+
+/* Large Screens */
+@media (max-width: 1559px) {
+}

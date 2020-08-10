@@ -1,0 +1,35 @@
+@font-face {  
+  font-family: "play";  
+  src: url("Play-Regular.ttf") format("opentype");  
+  unicode-range:"U+0-10FFFF";
+}
+@font-face {  
+  font-family: "Cairo";  
+  src: url("Cairo-Black.ttf") format("opentype");  
+  unicode-range:"U+0-10FFFF";
+}
+@font-face {  
+  font-family: "Cairo_bold";  
+  src: url("Cairo-Bold.ttf") format("opentype");  
+  unicode-range:"U+0-10FFFF";
+}
+@font-face {  
+  font-family: "Cairo";  
+  src: url("Cairo-ExtraLight.ttf") format("opentype");  
+  unicode-range:"U+0-10FFFF";
+}
+@font-face {  
+  font-family: "Cairo";  
+  src: url("Cairo-Light.ttf") format("opentype");  
+  unicode-range:"U+0-10FFFF";
+}
+@font-face {  
+  font-family: "Cairo";  
+  src: url("Cairo-Regular.ttf") format("opentype");  
+  unicode-range:"U+0-10FFFF";
+}
+@font-face {  
+  font-family: "Cairo";  
+  src: url("Cairo-SemiBold.ttf") format("opentype");  
+  unicode-range:"U+0-10FFFF";
+}

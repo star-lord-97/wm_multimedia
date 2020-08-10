@@ -1,0 +1,33 @@
+html, body {direction: ltr;}
+#headerone .socialmedia, #intro button.buttonmenu, #headerone .headerbottom .makemoney, #headerone .headerbottom .langarea, #headerone .headerbottom ul, .myaccountpage .stateaccount i.fa, .myaccountpage .tab-content input.savesettings, #intro .adminsarea {float: right;}
+#lastnews .title, #headerone .mailadd, #headerone .headerbottom .logo, #headerone .headerbottom ul li, footer .footermenu ul li, .myaccountpage .stateaccount .txtarea, .myaccountpage .sidebar .title .icon, .myfilespage .leftsection .search input, .myfilespage .leftsection .search button, .myfilespage .leftsection ul#folders_list li.item a .filename, .myfilespage .leftsection ul#folders_list li .addnewfolder input, .myfilespage .leftsection ul#folders_list li .addnewfolder button, .myreports form input[type="submit"], .download0page .blockinfo .iconf, .download0page .blockinfo .descone, .download0page .blockinfo .desctwo {float: left;}
+#headerone .headerbottom .makemoney a i.fa {float: left;margin: 0 8px 0 0;}
+#headerone .headerbottom .langarea {margin: 10px 10px 10px 15px;}
+#lastnews button.closebtn {left: auto;right: 20px;}
+#sidebarphone {right: auto;left: -100%;}
+#sidebarphone.menuisopen {right: auto;left: 0;}
+#sidebarphone button.closemenu {left: auto;right: -40px;border-radius: 0 4px 4px 0;}
+#filesafe .txt, #howmoney .txt, footer .footermenu ul li, .myaccountpage .stateaccount .txtarea, .myaccountpage .sidebar ul.nav-tabs li, .myaccountpage .sidebar .title .desc, .myaccountpage .tab-content .nametabe, .myaccountpage .tab-content .form-horizontal .form-group label, .myaccountpage .tab-content .form-horizontal .form-group span, .myaccountpage .tab-content .form-horizontal .form-group .checkbox, .myaccountpage .tab-content .alert, .myfilespage .leftsection ul#folders_list li.item a, .myfilespage .leftsection ul#folders_list li.backfolder a, .uploadformpage #url_upload.box .reurlupload span, .uploadformpage #file_upload #advanced .form-group label, .uploadformpage #url_upload.box .reurlupload label, .uploaderesult .contentarea .item .name span.size, #fileformpage .form-horizontal label.control-label, #fileformpage .form-horizontal .checkbox, .newspage .item, .newspage .item a, .newspage .item .content, .newsitempage .content, .download0page .blockinfo .descone, .download0page .blockinfo .desctwo ul li, .download0page .txt .colm1 ul li {text-align: left;}
+#howmoney .txt span {background-position: left center;padding: 0 0 0 50px;}
+.input-group span {border-radius: 4px 0 0 4px !important;}
+.input-group input.form-control {border-radius: 0 4px 4px 0 !important;}
+#registerpage .paymentinfo select, .myfilespage .leftsection ul#folders_list li.copyfiles .form-group select, .uploadformpage #file_upload #advanced .form-group select, .uploadformpage #url_upload.box .reurlupload select {background-position: right center;}
+.myaccountpage .sidebar .title .desc {margin: 0 0 0 25%;}
+.myaccountpage .tab-content .nametabe i.fa {margin: 0 10px 0 0;}
+.myaccountpage .tab-content .profitmode .form-group .checkbox input {float: left;margin: 14px 0 0 -20px;}
+.myaccountpage .tab-content .form-horizontal .form-group .checkbox, #fileformpage .form-horizontal .checkbox label {padding: 0 0 0 20px;}
+.myfilespage .leftsection ul#folders_list li.item a i.fa-folder, .myfilespage .leftsection ul#folders_list li.item a i.fa-folder-open {margin-left: 0;margin-right: 10px;float: left;line-height: 50px;}
+.myfilespage .leftsection ul#folders_list li.item a span.how {text-align: left;float: right;margin: 0 35px 0 0;}
+.myfilespage .leftsection ul#folders_list li.item .btn-group, .myfilespage .leftsection ul#folders_list li.item .dropdown-menu {right: 0;left: auto;}
+.myfilespage .leftsection ul#folders_list li.item a {padding: 0 10px 0 5px;}
+.myfilespage .leftsection ul#folders_list li.backfolder a i.fa {float: left;margin: 0 10px 0 0;}
+.myreports form .input-group {margin: 0 15px 0 0;float: left;}
+.uploadformpage ul.tabs li i.fa, .uploadformpage #file_upload.box .content .name input.fdescr {margin: 0 10px 0 0;}
+.uploadformpage #url_upload.box .reurlupload span i.fa {margin: 0 2px 0 0;}
+.uploadformpage #file_upload.box .content .icon, .uploaderesult .contentarea .item .icon {margin: -10px 0 -10px -10px;}
+.uploadformpage #file_upload.box .content .name, .uploaderesult .contentarea .item .name {text-align: left;margin-right: 0;margin-left: 5px;}
+.uploadformpage #file_upload.box .content a.del, .uploaderesult .contentarea .item .edit a {left: auto;right: 0;border-radius: 0 0 0 4px;}
+.uploaderesult .contentarea .item .edit, #intro .adminsarea ul.dropdown-menu {left: auto;right: 0;}
+#fileformpage .form-horizontal .checkbox label input {right: auto;left: 0;}
+.download0page .blockinfo .desctwo {border-radius: 0 8px 8px 0;}
+#intro .adminsarea {margin: 11px 15px 11px auto;}
