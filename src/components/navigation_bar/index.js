@@ -1,7 +1,40 @@
 import React, { Component, Fragment } from "react";
 import { NavLink } from "react-router-dom";
 
+// { !user && (
+// <React.Fragment>
+// <NavLink className="nav-item nav-link" to="/login">Login</NavLink>
+// <NavLink className="nav-item nav-link" to="/register">Register</NavLink>
+// </React.Fragment>
+//  )
+//  }
+
+// { user &&
+// (
+// <React.Fragment>
+// <NavLink className="nav-item nav-link" to="/profile">{ user.name }</NavLink>
+// <NavLink className="nav-item nav-link" to="/logout">Logout</NavLink>
+// </React.Fragment>
+// )
+
 class NavBar extends Component {
+    state = {
+        isLogin: false,
+        id: localStorage.getItem("id"),
+    };
+
+    componentDidMount() {
+        if (this.state.id) {
+            this.setState({ isLogin: true });
+        }
+    }
+
+    logout = () => {
+        localStorage.clear();
+        this.setState({ isLogin: false });
+        this.router.push("/Home");
+    };
+
     render() {
         return (
             <Fragment>
@@ -64,42 +97,66 @@ class NavBar extends Component {
                                     >
                                         <i className="fa fa-bars"></i>
                                     </button>
-
-                                    {/* user */}
-                                    <div className="langarea hidden-xs hidden-sm wow fadeInUp">
-                                        <div className="dropdown">
-                                            <button className="dropbtn">Ahmed Abdellah XD</button>
-                                            <div className="dropdown-content">
-                                                <NavLink to="/uploadFile">upload file</NavLink>
-                                                <NavLink to="/myFile">My file</NavLink>
-                                                <NavLink exact to="/">
-                                                    log out
-                                                </NavLink>
+                                    {/* name user */}
+                                    {this.state.isLogin && (
+                                        <Fragment>
+                                            <div className="langarea hidden-xs hidden-sm wow fadeInUp">
+                                                <div className="dropdown">
+                                                    <button className="dropbtn">
+                                                        {localStorage.getItem("name")}
+                                                    </button>
+                                                    <div className="dropdown-content">
+                                                        <NavLink to="/uploadFile">
+                                                            Upload file
+                                                        </NavLink>
+                                                        <NavLink to="/myFile">My files</NavLink>
+                                                        <button onClick={this.logout}>
+                                                            {" "}
+                                                            Logout
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <ul className="hidden-xs hidden-sm wow fadeInUp">
-                                        <div>
-                                            <li>
-                                                <NavLink exact to="/">
-                                                    Home
-                                                </NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink to="/login">Login</NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink to="/signUp">Sign Up</NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink to="/premium">Premium</NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink to="/contact">Contact Us</NavLink>
-                                            </li>
-                                        </div>
-                                    </ul>
+                                            <ul className="hidden-xs hidden-sm wow fadeInUp">
+                                                <div>
+                                                    <li>
+                                                        <NavLink exact to="/">
+                                                            Home
+                                                        </NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to="/premium">Premium</NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to="/contact">Contact Us</NavLink>
+                                                    </li>
+                                                </div>
+                                            </ul>
+                                        </Fragment>
+                                    )}
+                                    {!this.state.isLogin && (
+                                        <ul className="hidden-xs hidden-sm wow fadeInUp">
+                                            <div>
+                                                <li>
+                                                    <NavLink exact to="/">
+                                                        Home
+                                                    </NavLink>
+                                                </li>
+                                                <li>
+                                                    <NavLink to="/login">Login</NavLink>
+                                                </li>
+                                                <li>
+                                                    <NavLink to="/signUp">Sign Up</NavLink>
+                                                </li>
+                                                <li>
+                                                    <NavLink to="/premium">Premium</NavLink>
+                                                </li>
+                                                <li>
+                                                    <NavLink to="/contact">Contact Us</NavLink>
+                                                </li>
+                                            </div>
+                                        </ul>
+                                    )}
                                     <div className="clearfix"></div>
                                 </div>
                             </div>
