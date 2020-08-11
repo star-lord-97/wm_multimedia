@@ -68,12 +68,16 @@ class Login extends Component {
                     //helphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
                     //helphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
                     //helphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
-                    //helphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
+                    //helphelphelphelphelphelphelpelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
                     //display invalid credentials message and stay in the same page
                 } else {
                     console.log(response.data);
-                    localStorage.setItem("usertoken", response.data.token);
-                    // return response.data.token;
+                    localStorage.clear();
+                    localStorage.setItem("id", response.data.id);
+                    localStorage.setItem("name", response.data.name);
+                    localStorage.setItem("email", response.data.email);
+                    localStorage.setItem("public_key", response.data.public_key);
+                    localStorage.setItem("private_key", response.data.private_key);
                     this.props.history.push(`/MyFile`);
                 }
             })
