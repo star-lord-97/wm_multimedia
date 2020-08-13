@@ -1,22 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { NavLink } from "react-router-dom";
 
-// { !user && (
-// <React.Fragment>
-// <NavLink className="nav-item nav-link" to="/login">Login</NavLink>
-// <NavLink className="nav-item nav-link" to="/register">Register</NavLink>
-// </React.Fragment>
-//  )
-//  }
-
-// { user &&
-// (
-// <React.Fragment>
-// <NavLink className="nav-item nav-link" to="/profile">{ user.name }</NavLink>
-// <NavLink className="nav-item nav-link" to="/logout">Logout</NavLink>
-// </React.Fragment>
-// )
-
 class NavBar extends Component {
     state = {
         isLogin: false,
@@ -32,7 +16,6 @@ class NavBar extends Component {
     logout = () => {
         localStorage.clear();
         this.setState({ isLogin: false });
-        this.router.push("/Home");
     };
 
     render() {
@@ -110,10 +93,9 @@ class NavBar extends Component {
                                                             Upload file
                                                         </NavLink>
                                                         <NavLink to="/myFile">My files</NavLink>
-                                                        <button onClick={this.logout}>
-                                                            {" "}
+                                                        <NavLink to="/" onClick={this.logout}>
                                                             Logout
-                                                        </button>
+                                                        </NavLink>
                                                     </div>
                                                 </div>
                                             </div>

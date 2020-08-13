@@ -1,25 +1,30 @@
 import React, { Component, Fragment } from "react";
 import NavBar from "../navigation_bar";
 import axios from "axios";
+
 class MyFile extends Component {
     state = {
         dataItems: [],
     };
     componentDidMount() {
-        axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
-            this.setState({
-                dataItems: response.data,
+        axios
+            .get("http://127.0.0.1:8000/api/files/" + localStorage.getItem("id"))
+            .then((response) => {
+                this.setState({
+                    dataItems: response.data,
+                });
             });
-        });
     }
     render() {
         const data_items = this.state.dataItems.map((item) => {
             return (
                 <tr key={item.id}>
-                    <td>{item.name}</td>
-                    <td>{item.username}</td>
-                    <td>{item.email}</td>
-                    <td>{item.address.city}</td>
+                    <td>{item.title}</td>
+                    <td>{item.link}</td>
+                    <td>
+                        <button href={item.link}>Download</button>
+                    </td>
+                    <td>{item.status}</td>
                 </tr>
             );
         });
@@ -36,8 +41,8 @@ class MyFile extends Component {
                                 <table className="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>File Name</th>
-                                            <th>Link</th>
+                                            <th>File title</th>
+                                            <th>Sharable link</th>
                                             <th>Action</th>
                                             <th>Status</th>
                                         </tr>

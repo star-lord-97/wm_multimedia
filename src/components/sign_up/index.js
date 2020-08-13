@@ -13,6 +13,7 @@ class SignUp extends Component {
         email: "",
         password: "",
         confirmPassword: "",
+        messageEmail: "",
         errors: {
             name: "",
             email: "",
@@ -93,13 +94,9 @@ class SignUp extends Component {
                 })
                 .then((response) => {
                     if (response.data === "email taken") {
-                        console.log(response.data);
-                        //helphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
-                        //helphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
-                        //helphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
-                        //helphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
-                        //helphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
-                        //display email already taken message and stay in the same page
+                        this.setState({
+                            messageEmail: "E-mail already taken, choose another email!!",
+                        });
                     } else {
                         console.log(response.data);
                         this.props.history.push("/login");
@@ -124,6 +121,7 @@ class SignUp extends Component {
                                     <div className="title">User Registration</div>
                                     <div className="content">
                                         <form onSubmit={this.handleSubmit}>
+                                            <span className="error">{this.state.messageEmail}</span>
                                             <div className="input-group">
                                                 <span className="input-group-addon" id="name">
                                                     <i className="fa fa-user"></i>

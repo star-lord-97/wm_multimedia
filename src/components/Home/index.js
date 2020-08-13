@@ -1,7 +1,25 @@
 import React, { Component, Fragment } from "react";
 import { NavLink } from "react-router-dom";
 
+// const localstor =localStorage.getItem('usertoken');
+
 class Home extends Component {
+    state = {
+        isLogin: false,
+        id: localStorage.getItem("id"),
+    };
+
+    componentDidMount() {
+        if (this.state.id) {
+            this.setState({ isLogin: true });
+        }
+    }
+
+    logout = () => {
+        localStorage.clear();
+        this.setState({ isLogin: false });
+    };
+
     render() {
         return (
             <Fragment>
@@ -65,40 +83,65 @@ class Home extends Component {
                                     >
                                         <i className="fa fa-bars"></i>
                                     </button>
-
-                                    {/* user */}
-                                    <div className="langarea hidden-xs hidden-sm wow fadeInUp">
-                                        <div className="dropdown">
-                                            <button className="dropbtn">Ahmed Abdellah XD</button>
-                                            <div className="dropdown-content">
-                                                <NavLink to="/uploadFile">upload file</NavLink>
-                                                <NavLink to="/myFile">My file</NavLink>
-                                                <a href="#">log out</a>
+                                    {/* name user */}
+                                    {this.state.isLogin && (
+                                        <Fragment>
+                                            <div className="langarea hidden-xs hidden-sm wow fadeInUp">
+                                                <div className="dropdown">
+                                                    <button className="dropbtn">
+                                                        {localStorage.getItem("name")}
+                                                    </button>
+                                                    <div className="dropdown-content">
+                                                        <NavLink to="/uploadFile">
+                                                            Upload file
+                                                        </NavLink>
+                                                        <NavLink to="/myFile">My files</NavLink>
+                                                        <NavLink to="/" onClick={this.logout}>
+                                                            Logout
+                                                        </NavLink>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <ul className="hidden-xs hidden-sm wow fadeInUp">
-                                        <div>
-                                            <li>
-                                                <NavLink exact to="/">
-                                                    Home
-                                                </NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink to="/login">Login</NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink to="/signUp">Sign Up</NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink to="/premium">Premium</NavLink>
-                                            </li>
-                                            <li>
-                                                <NavLink to="/contact">Contact Us</NavLink>
-                                            </li>
-                                        </div>
-                                    </ul>
+                                            <ul className="hidden-xs hidden-sm wow fadeInUp">
+                                                <div>
+                                                    <li>
+                                                        <NavLink exact to="/">
+                                                            Home
+                                                        </NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to="/premium">Premium</NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to="/contact">Contact Us</NavLink>
+                                                    </li>
+                                                </div>
+                                            </ul>
+                                        </Fragment>
+                                    )}
+                                    {!this.state.isLogin && (
+                                        <ul className="hidden-xs hidden-sm wow fadeInUp">
+                                            <div>
+                                                <li>
+                                                    <NavLink exact to="/">
+                                                        Home
+                                                    </NavLink>
+                                                </li>
+                                                <li>
+                                                    <NavLink to="/login">Login</NavLink>
+                                                </li>
+                                                <li>
+                                                    <NavLink to="/signUp">Sign Up</NavLink>
+                                                </li>
+                                                <li>
+                                                    <NavLink to="/premium">Premium</NavLink>
+                                                </li>
+                                                <li>
+                                                    <NavLink to="/contact">Contact Us</NavLink>
+                                                </li>
+                                            </div>
+                                        </ul>
+                                    )}
                                     <div className="clearfix"></div>
                                 </div>
                             </div>
@@ -116,7 +159,6 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-
                 <div id="ouradvantages">
                     <div className="container">
                         <div className="title wow fadeInUp">Why us?!</div>
@@ -136,7 +178,6 @@ class Home extends Component {
                                     will be able to access it.
                                 </p>
                             </li>
-
                             <li className="wow fadeInUp">
                                 <span>Secure upload</span>
                                 <div className="icon">
@@ -151,7 +192,6 @@ class Home extends Component {
                                     afraid of them stealing your hard work from you.
                                 </p>
                             </li>
-
                             <li className="wow fadeInUp">
                                 <span>Torrent files</span>
                                 <div className="icon">
@@ -166,7 +206,6 @@ class Home extends Component {
                                     single file from another end PCs like yours.
                                 </p>
                             </li>
-
                             <li className="wow fadeInUp">
                                 <span>Files upload</span>
                                 <div className="icon">
@@ -184,7 +223,6 @@ class Home extends Component {
                         </ul>
                     </div>
                 </div>
-
                 <div id="filesafe">
                     <div className="container">
                         <div className="row">

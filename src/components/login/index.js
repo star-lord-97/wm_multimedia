@@ -12,6 +12,7 @@ class Login extends Component {
     state = {
         email: "",
         password: "",
+        messageCredentials: "",
         errors: {
             email: "",
             password: "",
@@ -64,12 +65,10 @@ class Login extends Component {
             .then((response) => {
                 if (response.data === "invalid credentials") {
                     console.log(response.data);
-                    //helphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
-                    //helphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
-                    //helphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
-                    //helphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
-                    //helphelphelphelphelphelphelpelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelphelp
-                    //display invalid credentials message and stay in the same page
+                    this.setState({
+                        messageCredentials:
+                            "Invalid credentials, double check your email/password!!",
+                    });
                 } else {
                     console.log(response.data);
                     localStorage.clear();
@@ -99,6 +98,10 @@ class Login extends Component {
                                     <div className="title">User Login</div>
                                     <div className="content">
                                         <form onSubmit={this.handleSubmit}>
+                                            <span className="error">
+                                                {this.state.messageCredentials}
+                                            </span>
+
                                             <div className="input-group">
                                                 <span className="input-group-addon" id="login">
                                                     <i className="fa fa-user"></i>
