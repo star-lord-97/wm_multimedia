@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import NavBar from "../navigation_bar";
+import axios from "axios";
 
 class Upload extends Component {
     state = {
@@ -20,7 +21,35 @@ class Upload extends Component {
             name: "",
             file: "",
         });
-        console.log(this.state);
+
+        const file = {
+            name: this.state.name,
+            file: this.state.file,
+            public_key: localStorage.getItem("public_key"),
+        };
+
+        console.log(this.state.file);
+
+        axios
+            .post("http://localhost:8000/api/file", file, {
+                headers: { "Content-Type": "application/json" },
+            })
+            .then((response) => {
+                console.log(response.data);
+            });
+        // .then((response) => {
+        //     if (response.data === "email taken") {
+        //         this.setState({
+        //             messageEmail: "E-mail already taken, choose another email!!",
+        //         });
+        //     } else {
+        //         console.log(response.data);
+        //         this.props.history.push("/login");
+        //     }
+        // })
+        // .catch((err) => {
+        //     console.log(err);
+        // });
     };
 
     render() {
@@ -38,7 +67,10 @@ class Upload extends Component {
                                 </ul>
                                 <div className="uploadtab box visible" id="file_upload">
                                     <div className="tabcontent">
-                                        <form onSubmit={this.handleSubmit}>
+                                        <form
+                                            onSubmit={this.handleSubmit}
+                                            encType="multipart/form-data"
+                                        >
                                             <div className="input-group">
                                                 <span className="input-group-addon" id="message">
                                                     <i className="fa fa-file-text"></i>
@@ -47,7 +79,7 @@ class Upload extends Component {
                                                     type="text"
                                                     name="name"
                                                     className="form-control"
-                                                    placeholder="Please Write Here Name Of your File"
+                                                    placeholder="File title: "
                                                     required
                                                     onChange={this.handleChange}
                                                     value={this.state.name}
