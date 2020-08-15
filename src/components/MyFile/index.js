@@ -20,9 +20,14 @@ class MyFile extends Component {
             return (
                 <tr key={item.id}>
                     <td>{item.title}</td>
-                    <td>{item.link}</td>
                     <td>
-                        <button href={item.link}>Download</button>
+                        {item.status == "Public" && item.link}
+                        {item.status == "Private" && "-"}
+                    </td>
+                    <td>
+                        <button>
+                            <a href={item.link}>Download</a>
+                        </button>
                     </td>
                     <td>{item.status}</td>
                 </tr>

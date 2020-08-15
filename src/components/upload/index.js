@@ -6,7 +6,7 @@ class Upload extends Component {
     state = {
         name: "",
         file: "",
-        optradio: "",
+        status: "",
     };
 
     handleChange = (event) => {
@@ -20,15 +20,15 @@ class Upload extends Component {
         this.setState({
             name: "",
             file: "",
+            status: "",
         });
 
         const file = {
             name: this.state.name,
             file: this.state.file,
             public_key: localStorage.getItem("public_key"),
+            status: this.state.status,
         };
-
-        console.log(this.state.file);
 
         axios
             .post("http://localhost:8000/api/file", file, {
@@ -37,19 +37,6 @@ class Upload extends Component {
             .then((response) => {
                 console.log(response.data);
             });
-        // .then((response) => {
-        //     if (response.data === "email taken") {
-        //         this.setState({
-        //             messageEmail: "E-mail already taken, choose another email!!",
-        //         });
-        //     } else {
-        //         console.log(response.data);
-        //         this.props.history.push("/login");
-        //     }
-        // })
-        // .catch((err) => {
-        //     console.log(err);
-        // });
     };
 
     render() {
@@ -108,7 +95,7 @@ class Upload extends Component {
                                                 <h2 className="visibiltyLeft">Visibility</h2>
                                                 <input
                                                     type="radio"
-                                                    name="optradio"
+                                                    name="status"
                                                     value="Public"
                                                     defaultChecked
                                                     onChange={this.handleChange}
@@ -116,7 +103,7 @@ class Upload extends Component {
                                                 Public
                                                 <input
                                                     type="radio"
-                                                    name="optradio"
+                                                    name="status"
                                                     value="Private"
                                                     onChange={this.handleChange}
                                                 />{" "}
