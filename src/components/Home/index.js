@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 // const localstor =localStorage.getItem('usertoken');
 
@@ -96,9 +96,9 @@ class Home extends Component {
                                                             Upload file
                                                         </NavLink>
                                                         <NavLink to="/myFile">My files</NavLink>
-                                                        <NavLink to="/" onClick={this.logout}>
+                                                        <Link to="/" onClick={this.logout}>
                                                             Logout
-                                                        </NavLink>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>

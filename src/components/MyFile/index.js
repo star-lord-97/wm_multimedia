@@ -6,6 +6,7 @@ class MyFile extends Component {
     state = {
         dataItems: [],
     };
+
     componentDidMount() {
         axios
             .get("http://127.0.0.1:8000/api/files/" + localStorage.getItem("id"))
@@ -15,6 +16,7 @@ class MyFile extends Component {
                 });
             });
     }
+
     render() {
         const data_items = this.state.dataItems.map((item) => {
             return (
@@ -22,7 +24,7 @@ class MyFile extends Component {
                     <td>{item.title}</td>
                     <td>
                         {item.status == "Public" && item.link}
-                        {item.status == "Private" && "-"}
+                        {item.status == "Private" && "Private"}
                     </td>
                     <td>
                         <button>
@@ -33,13 +35,14 @@ class MyFile extends Component {
                 </tr>
             );
         });
+
         return (
             <Fragment>
                 <NavBar />
                 <div id="wrapper">
                     <div className="container">
                         <h2 id="select_file" className="current lol">
-                            My File
+                            My Files
                         </h2>
                         <div className="uploadformpage wow fadeInUp">
                             <div className="section">

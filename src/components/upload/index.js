@@ -7,6 +7,7 @@ class Upload extends Component {
         name: "",
         file: "",
         status: "",
+        message: "",
     };
 
     handleChange = (event) => {
@@ -17,28 +18,38 @@ class Upload extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.setState({
-            name: "",
-            file: "",
-            status: "",
-        });
 
         const file = {
             name: this.state.name,
             file: this.state.file,
-            public_key: localStorage.getItem("public_key"),
             status: this.state.status,
+            public_key: localStorage.getItem("public_key"),
         };
 
+        // console.log(this.state.file);
         axios
             .post("http://localhost:8000/api/file", file, {
                 headers: { "Content-Type": "application/json" },
             })
             .then((response) => {
-                console.log(response.data);
+                if (response.data === "done") {
+                    this.setState({
+                        message: "The File Upload Done :)",
+                    });
+                }
+                if (response.data) {
+                    this.setState({
+                        message: response.data,
+                    });
+                }
             });
-    };
 
+        this.setState({
+            name: "",
+            file: "",
+            status: "",
+        });
+    };
     render() {
         return (
             <Fragment>
@@ -54,6 +65,7 @@ class Upload extends Component {
                                 </ul>
                                 <div className="uploadtab box visible" id="file_upload">
                                     <div className="tabcontent">
+                                        <span className="error">{this.state.message}</span>
                                         <form
                                             onSubmit={this.handleSubmit}
                                             encType="multipart/form-data"
@@ -66,7 +78,7 @@ class Upload extends Component {
                                                     type="text"
                                                     name="name"
                                                     className="form-control"
-                                                    placeholder="File title: "
+                                                    placeholder="Title"
                                                     required
                                                     onChange={this.handleChange}
                                                     value={this.state.name}
@@ -85,9 +97,14 @@ class Upload extends Component {
                                                         value={this.state.file}
                                                     />
                                                     <i className="fa fa-cloud-upload"></i>
-                                                    <span>
-                                                        Drop the file here or click to upload
-                                                    </span>
+                                                    {this.state.file && (
+                                                        <span>{this.state.file}</span>
+                                                    )}
+                                                    {!this.state.file && (
+                                                        <span>
+                                                            Drop the file here or click to upload
+                                                        </span>
+                                                    )}
                                                 </div>
                                             </div>
 
@@ -99,14 +116,14 @@ class Upload extends Component {
                                                     value="Public"
                                                     defaultChecked
                                                     onChange={this.handleChange}
-                                                />{" "}
+                                                />
                                                 Public
                                                 <input
                                                     type="radio"
                                                     name="status"
                                                     value="Private"
                                                     onChange={this.handleChange}
-                                                />{" "}
+                                                />
                                                 Private
                                             </div>
 

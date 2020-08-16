@@ -32,7 +32,7 @@ class Login extends Component {
                         ? ""
                         : validEmailRegex.test(value)
                         ? ""
-                        : "Email is not valid!(Must Contain @ ,.com)";
+                        : 'Email not valid!! (Must contain "@", ".com")';
                 break;
             case "password":
                 errors.password =
@@ -40,7 +40,7 @@ class Login extends Component {
                         ? ""
                         : validpasswordRegex.test(value)
                         ? ""
-                        : "Password is not valid!(Must Contain at least 8 characters and $ , a-z ,A-z)";
+                        : 'Password not valid!! (Must contain at least 8 characters, "a-z" and "A-Z")';
                 break;
         }
         this.setState({ errors, [name]: value });
@@ -95,7 +95,7 @@ class Login extends Component {
                         <div className="row">
                             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3">
                                 <div id="loginpage">
-                                    <div className="title">User Login</div>
+                                    <div className="title">Login</div>
                                     <div className="content">
                                         <form onSubmit={this.handleSubmit}>
                                             <span className="error">
@@ -110,7 +110,7 @@ class Login extends Component {
                                                     type="text"
                                                     name="email"
                                                     className="form-control"
-                                                    placeholder="Enter your Login E-mail"
+                                                    placeholder="Email"
                                                     required
                                                     onChange={this.handleChange}
                                                     value={this.state.email}
@@ -145,7 +145,7 @@ class Login extends Component {
                                             <div className="pull-right">
                                                 <div className="forgotpass">
                                                     <Link to="/forgotpass">
-                                                        Forgot Your Password ?
+                                                        Forgot your password?!
                                                     </Link>
                                                 </div>
                                             </div>

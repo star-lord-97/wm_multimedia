@@ -33,7 +33,7 @@ class SignUp extends Component {
                     value.length == 0
                         ? ""
                         : value.length < 5
-                        ? "Full Name must be at least 5 characters long!(Please Rewrite The Name)"
+                        ? "Name must be at least 5 characters long!"
                         : "";
                 break;
             case "email":
@@ -42,7 +42,7 @@ class SignUp extends Component {
                         ? ""
                         : validEmailRegex.test(value)
                         ? ""
-                        : "Email is not valid!(Must Contain @ ,.com)";
+                        : 'Email not valid!! (Must contain "@", ".com")';
                 break;
             case "password":
                 errors.password =
@@ -50,7 +50,7 @@ class SignUp extends Component {
                         ? ""
                         : validpasswordRegex.test(value)
                         ? ""
-                        : "Password is not valid!(Must Contain at least 8 characters and $ , a-z ,A-z)";
+                        : 'Password not valid!! (Must contain at least 8 characters, "a-z" and "A-Z")';
                 break;
             case "confirmPassword":
                 errors.confirmPassword =
@@ -58,7 +58,7 @@ class SignUp extends Component {
                         ? ""
                         : validpasswordRegex.test(value)
                         ? ""
-                        : "Password is not valid!(Must Contain at least 8 characters and $ , a-z ,A-z)";
+                        : "Passwords don't match";
                 break;
         }
 
@@ -107,6 +107,7 @@ class SignUp extends Component {
                 });
         }
     };
+
     render() {
         // this to hole message in variable in the render
         const { errors } = this.state;
@@ -118,7 +119,7 @@ class SignUp extends Component {
                         <div className="row">
                             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-md-offset-3">
                                 <div id="registerpage">
-                                    <div className="title">User Registration</div>
+                                    <div className="title">Registration</div>
                                     <div className="content">
                                         <form onSubmit={this.handleSubmit}>
                                             <span className="error">{this.state.messageEmail}</span>
@@ -149,7 +150,7 @@ class SignUp extends Component {
                                                     type="text"
                                                     name="email"
                                                     className="form-control"
-                                                    placeholder="E-mail"
+                                                    placeholder="Email"
                                                     required
                                                     onChange={this.handleChange}
                                                     value={this.state.email}
@@ -192,7 +193,7 @@ class SignUp extends Component {
                                                     type="password"
                                                     name="confirmPassword"
                                                     className="form-control"
-                                                    placeholder="Retype Password"
+                                                    placeholder="Retype password"
                                                     autoComplete="off"
                                                     required
                                                     onChange={this.handleChange}
